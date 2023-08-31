@@ -1,5 +1,18 @@
 .section{
     background-color: white;
-    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.section__header{
     border-bottom: lightgrey solid 2px;
+    margin: 0;
+    padding: 20px;
+}
+
+.section__form{
+    padding: 20px;
+}
+
+.section__list{
+    padding-bottom: 20px;
 }
