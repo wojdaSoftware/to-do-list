@@ -1,5 +1,5 @@
 {
-    const tasks = [
+    let tasks = [
         {
             content: "example task",
             done: false,
@@ -19,12 +19,30 @@
                 ${task.content}
             </li>
             `;
-        }
+        };
 
         document.querySelector(".js-taskList").innerHTML = htmlString;
     };
 
+    const addTask = (content) => {
+        tasks.push(
+            {
+                content: content,
+                done: false,
+            }
+        );
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        addTask(document.querySelector(".js-newTask").value);
+        render();
+    };
+
     const init = () => {
+        const form = document.querySelector(".js-form")
+        form.addEventListener("submit", onFormSubmit);
         render();
     };
 
