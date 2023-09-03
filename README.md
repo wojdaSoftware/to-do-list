@@ -7,5 +7,8 @@ Add, remove, and mark finished or unfinished tasks
 * CSS
   * BEM naming convention
   * Normalize.css
+  * Grid
+  * Flex
+  * Media queries
 * Javascript
   * ES6+ features
