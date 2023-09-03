@@ -1,16 +1,16 @@
-.section__list {
+.list {
     padding: 0px 40px 20px 40px;
     list-style: none;
 }
 
-.section__listItem {
+.list__listItem {
     border-bottom: rgb(226, 226, 226) solid 2px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 20px;
 }
 
-.section__listButton {
+.list__button {
     border: none;
     border-radius: 0;
     background-color: green;
@@ -22,14 +22,14 @@
     padding: 3px 0 0 0;
 }
 
-.section__listButton:hover{
+.list__button:hover{
     background-color: rgb(0, 153, 0);
 }
 
-.section__listButton--second {
+.list__button--second {
     background-color: red;
 }
 
-.section__listButton--second:hover{
+.list__button--second:hover{
     background-color: rgb(255, 51, 51);
 }
