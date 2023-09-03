@@ -1,14 +1,5 @@
 {
-    let tasks = [
-        {
-            content: "Task example",
-            done: false,
-        },
-        {
-            content: "Task example (done)",
-            done: true,
-        },
-    ];
+    let tasks = [];
 
     const markTask = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done
