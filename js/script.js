@@ -33,21 +33,7 @@
         render();
     };
 
-    const render = () => {
-        let htmlString = "";
-
-        for (const task of tasks) {
-            htmlString += `
-            <li${task.done ? " style = \"text-decoration: line-through\"" : ""}>
-                <button class="js-markButton">Done</button>
-                ${task.content}
-                <button class = "js-removeButton">Delete</button>
-            </li>
-            `;
-        };
-
-        document.querySelector(".js-taskList").innerHTML = htmlString;
-
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-removeButton");
 
         removeButtons.forEach((removeButton, taskIndex) => {
@@ -63,14 +49,35 @@
                 markTask(taskIndex);
             });
         });
+    }
+
+    const render = () => {
+        let htmlString = "";
+
+        for (const task of tasks) {
+            htmlString += `
+            <li${task.done ? " style = \"text-decoration: line-through\"" : ""}>
+                <button class="js-markButton">Done</button>
+                ${task.content}
+                <button class = "js-removeButton">Delete</button>
+            </li>
+            `;
+        };
+
+        document.querySelector(".js-taskList").innerHTML = htmlString;
+
+        bindEvents()
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        const newTask = document.querySelector(".js-newTask");
 
-        addTask(document.querySelector(".js-newTask").value.trim());
+        addTask(newTask.value.trim());
 
         render();
+
+        newTask.value = "";
     };
 
     const init = () => {
