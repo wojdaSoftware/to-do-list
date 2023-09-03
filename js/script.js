@@ -10,6 +10,11 @@
         },
     ];
 
+    const markTask = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done
+        render();
+    }
+
     const addTask = (content) => {
         if (content === "") {
             return;
@@ -23,8 +28,8 @@
         );
     };
 
-    const removeTask = (index) => {
-        tasks.splice(index, 1);
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
         render();
     };
 
@@ -34,6 +39,7 @@
         for (const task of tasks) {
             htmlString += `
             <li${task.done ? " style = \"text-decoration: line-through\"" : ""}>
+                <button class="js-markButton">Done</button>
                 ${task.content}
                 <button class = "js-removeButton">Delete</button>
             </li>
@@ -44,9 +50,17 @@
 
         const removeButtons = document.querySelectorAll(".js-removeButton");
 
-        removeButtons.forEach((removeButton, index) => {
+        removeButtons.forEach((removeButton, taskIndex) => {
             removeButton.addEventListener("click", () => {
-                removeTask(index)
+                removeTask(taskIndex);
+            });
+        });
+
+        const markButtons = document.querySelectorAll(".js-markButton");
+
+        markButtons.forEach((markButton, taskIndex) => {
+            markButton.addEventListener("click", () => {
+                markTask(taskIndex);
             });
         });
     };
