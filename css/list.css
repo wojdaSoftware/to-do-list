@@ -33,3 +33,7 @@
 .list__button--second:hover{
     background-color: rgb(255, 51, 51);
 }
+
+.list__paragragh{
+    overflow-x: hidden;
+}
