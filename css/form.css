@@ -10,7 +10,7 @@
 }
 
 .form__textInput {
-    border: lightgrey solid 2px;
+    border: rgb(226, 226, 226) solid 2px;
     padding: 10px;
     border-radius: 0;
     flex-grow: 1;
