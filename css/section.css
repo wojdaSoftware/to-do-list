@@ -8,29 +8,3 @@
     margin: 0;
     padding: 20px;
 }
-
-.section__list {
-    padding-bottom: 20px;
-    list-style: none;
-}
-
-.section__listItem {
-    border-bottom: rgb(226, 226, 226) solid 2px;
-     display: grid;
-    grid-template-columns: auto 1fr auto;
-}
-
-.section__listButton {
-    border: none;
-    border-radius: 0;
-    background-color: green;
-    display: block;
-    width: 35px;
-    height: 35px;
-}
-
-.section__listButton--second {
-    background-color: red;
-}
-
-.section__listParagra
