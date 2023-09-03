@@ -1,11 +1,11 @@
 {
     let tasks = [
         {
-            content: "example task",
+            content: "Task example",
             done: false,
         },
         {
-            content: "gugu gaga",
+            content: "Task example (done)",
             done: true,
         },
     ];
@@ -25,6 +25,10 @@
     };
 
     const addTask = (content) => {
+        if (content === "") {
+            return;
+        }
+
         tasks.push(
             {
                 content: content,
@@ -36,14 +40,17 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        addTask(document.querySelector(".js-newTask").value);
+        addTask(document.querySelector(".js-newTask").value.trim());
+
         render();
     };
 
     const init = () => {
         const form = document.querySelector(".js-form")
-        form.addEventListener("submit", onFormSubmit);
+
         render();
+
+        form.addEventListener("submit", onFormSubmit);
     };
 
     init();
