@@ -1,23 +1,13 @@
-.section {
-    background-color: white;
-    margin-bottom: 15px;
-}
-
-.section__header {
-    border-bottom: rgb(226, 226, 226) solid 2px;
-    margin: 0;
-    padding: 20px;
-}
-
 .section__list {
-    padding-bottom: 20px;
+    padding: 0px 40px 20px 40px;
     list-style: none;
 }
 
 .section__listItem {
     border-bottom: rgb(226, 226, 226) solid 2px;
-     display: grid;
+    display: grid;
     grid-template-columns: auto 1fr auto;
+    gap: 20px;
 }
 
 .section__listButton {
@@ -27,10 +17,13 @@
     display: block;
     width: 35px;
     height: 35px;
+    align-self: center;
 }
 
 .section__listButton--second {
     background-color: red;
 }
 
-.section__listParagra
+.section__listParagraph {
+
+}

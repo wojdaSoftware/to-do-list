@@ -56,10 +56,10 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li${task.done ? " style = \"text-decoration: line-through\"" : ""}>
-                <button class="js-markButton">Done</button>
-                ${task.content}
-                <button class = "js-removeButton">Delete</button>
+            <li class="section__listItem" ${task.done ? " style = \"text-decoration: line-through\"" : ""}>
+                <button class="section__listButton js-markButton"></button>
+                <p>${task.content}</p>
+                <button class = "section__listButton section__listButton--second js-removeButton"></button>
             </li>
             `;
         };

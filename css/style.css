@@ -10,5 +10,6 @@ html {
 }
 
 .body{
-    background-color: lightgray;
+    background-color: rgb(226, 226, 226);
+    margin: 20px;
 }
