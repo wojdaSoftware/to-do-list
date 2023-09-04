@@ -50,7 +50,7 @@
             <li class="list__listItem">
                 <button class="list__button js-markButton">${task.done ? "&#10004" : ""}</button>
                 <p class = "list__paragragh" ${task.done ? "style = \"text-decoration: line-through\"" : ""}>${task.content}</p>
-                <button class = "list__button list__button--second js-removeButton"><img src="/images/bin-icon.png" alt="Bin icon" width = 23px></button>
+                <button class = "list__button list__button--second js-removeButton"><img src="../images/bin-icon.png" alt="Bin icon" width = 23px></button>
             </li>
             `;
         };
