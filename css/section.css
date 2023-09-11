@@ -4,8 +4,8 @@
     box-shadow: 0px 0px 10px -5px rgba(107, 107, 107, 1);
 }
 
-.section__header {
-    border-bottom: rgb(226, 226, 226) solid 2px;
+.section__title{
     margin: 0;
     padding: 20px;
+    border-bottom: rgb(226, 226, 226) solid 2px;
 }

@@ -1,5 +1,29 @@
-.header{
+.header {
     max-width: 1200px;
     margin: auto;
     margin-top: 50px;
+}
+
+.header--second {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: rgb(226, 226, 226) solid 2px;
+}
+
+.header__title {
+    margin: 0;
+    padding: 20px;
+}
+
+.header__gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header__button {
+    color: teal;
+    background-color: white;
+    border: none;
+    padding: 0 20px 0 0;
 }
