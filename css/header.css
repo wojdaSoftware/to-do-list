@@ -6,9 +6,15 @@
 
 .header--second {
     margin-top: 0;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 300px;
     border-bottom: rgb(226, 226, 226) solid 2px;
+}
+
+@media (max-width: 767px) {
+    .header--second {
+        grid-template-columns: 1fr;
+    }
 }
 
 .header__title {
@@ -19,6 +25,14 @@
 .header__gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+    .header__gridContainer{
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 .header__button {
