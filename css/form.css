@@ -45,7 +45,20 @@
     transform: scale(1.2);
 }
 
+@media (max-width: 767px) {
+    .form__button:hover {
+        transform: scaleY(1.2) scaleX(1.03);
+    }
+}
+
 .form__button:active {
     transform: scale(1.1);
     transition-duration: 0ms;
+}
+
+@media (max-width: 767px) {
+    .form__button:active {
+        transform: scaleY(1.1) scaleX(1.01);
+        transition-duration: 0ms
+    }
 }
