@@ -2,25 +2,20 @@
     let tasks = [];
 
     const markTask = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done
+        tasks = tasks.map((task, index) => index === taskIndex ? { ...task, done: !tasks[taskIndex].done } : task);
+
         render();
-    }
+    };
 
     const addTask = (content) => {
-        if (content === "") {
-            return;
-        }
+        if (content === "") return;
 
-        tasks.push(
-            {
-                content: content,
-                done: false,
-            }
-        );
+        tasks = [...tasks, { content: content }]
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = tasks.filter((task, index) => index !== taskIndex);
+
         render();
     };
 
