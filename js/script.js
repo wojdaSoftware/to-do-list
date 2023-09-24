@@ -56,14 +56,22 @@
     };
 
     const renderButtons = () => {
+        let htmlString = "";
+
+        if (tasks.length > 0) {
+            htmlString = `
+        <button class="header__button">Finish all</button>
+        <button class="header__button">Hide finished</button>
+        `
+        };
+
+        document.querySelector(".js-buttonsContainer").innerHTML = htmlString;
 
     };
 
     const render = () => {
         renderTasks();
-        if (tasks.length > 0) {
-            renderButtons();
-        };
+        renderButtons();
 
         bindMarkEvents();
         bindRemoveEvents();
