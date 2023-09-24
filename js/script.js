@@ -19,15 +19,7 @@
         render();
     };
 
-    const bindEvents = () => {
-        const removeButtons = document.querySelectorAll(".js-removeButton");
-
-        removeButtons.forEach((removeButton, taskIndex) => {
-            removeButton.addEventListener("click", () => {
-                removeTask(taskIndex);
-            });
-        });
-
+    const bindMarkEvents = () => {
         const markButtons = document.querySelectorAll(".js-markButton");
 
         markButtons.forEach((markButton, taskIndex) => {
@@ -35,9 +27,19 @@
                 markTask(taskIndex);
             });
         });
-    }
+    };
 
-    const render = () => {
+    const bindRemoveEvents = () => {
+        const removeButtons = document.querySelectorAll(".js-removeButton");
+
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(taskIndex);
+            });
+        });
+    };
+
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -51,8 +53,20 @@
         };
 
         document.querySelector(".js-taskList").innerHTML = htmlString;
+    };
 
-        bindEvents()
+    const renderButtons = () => {
+
+    };
+
+    const render = () => {
+        renderTasks;
+        if (tasks.length > 0) {
+            renderButtons
+        };
+
+        bindMarkEvents();
+        bindRemoveEvents();
     };
 
     const onFormSubmit = (event) => {
