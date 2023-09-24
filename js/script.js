@@ -60,9 +60,9 @@
     };
 
     const render = () => {
-        renderTasks;
+        renderTasks();
         if (tasks.length > 0) {
-            renderButtons
+            renderButtons();
         };
 
         bindMarkEvents();
