@@ -44,7 +44,6 @@
         tasks = tasks.map((task) => ({ ...task, done: true }))
 
         render();
-        renderButtons();
     };
 
     const bindMarkAllEvent = () => {
@@ -55,19 +54,41 @@
         };
     };
 
-    const bindHideEvent = () => { };
+    const toggleHideTasks = () => {
+        hideFinished = !hideFinished
+
+        render();
+    };
+
+    const bindHideEvent = () => {
+        const hideButton = document.querySelector(".js-hideButton");
+
+        if (hideButton) {
+            hideButton.addEventListener("click", toggleHideTasks);
+        };
+    };
 
     const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
-            htmlString += `
-            <li class="list__listItem">
-                <button class="list__button js-markButton">${task.done ? "&#10004" : ""}</button>
-                <p class = "list__paragragh" ${task.done ? "style = \"text-decoration: line-through\"" : ""}>${task.content}</p>
-                <button class = "list__button list__button--second js-removeButton">🗑️</button>
-            </li>
-            `;
+            if (hideFinished) {
+                htmlString += `
+                <li class="list__listItem ${task.done ? "list__listItem--hidden" : ""}">
+                    <button class="list__button js-markButton">${task.done ? "&#10004" : ""}</button>
+                    <p class = "list__paragragh" ${task.done ? "style = \"text-decoration: line-through\"" : ""}>${task.content}</p>
+                    <button class = "list__button list__button--second js-removeButton">🗑️</button>
+                </li>
+                `;
+            } else {
+                htmlString += `
+                <li class="list__listItem ">
+                    <button class="list__button js-markButton">${task.done ? "&#10004" : ""}</button>
+                    <p class = "list__paragragh" ${task.done ? "style = \"text-decoration: line-through\"" : ""}>${task.content}</p>
+                    <button class = "list__button list__button--second js-removeButton">🗑️</button>
+                </li>
+                `;
+            };
         };
 
         document.querySelector(".js-taskList").innerHTML = htmlString;

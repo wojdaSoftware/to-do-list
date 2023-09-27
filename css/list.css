@@ -10,6 +10,10 @@
     gap: 20px;
 }
 
+.list__listItem--hidden {
+    display: none;
+}
+
 .list__button {
     border: none;
     border-radius: 0;
@@ -23,7 +27,7 @@
     transition: 500ms;
 }
 
-.list__button:hover{
+.list__button:hover {
     background-color: rgb(0, 153, 0);
 }
 
@@ -32,10 +36,10 @@
     transition: 500ms;
 }
 
-.list__button--second:hover{
+.list__button--second:hover {
     background-color: rgb(255, 51, 51);
 }
 
-.list__paragragh{
+.list__paragragh {
     overflow-x: hidden;
 }
