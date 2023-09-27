@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 767px) {
-    .header__gridContainer{
+    .header__gridContainer {
         grid-template-columns: 1fr;
         grid-row-gap: 10px;
         margin-bottom: 10px;
@@ -43,6 +43,10 @@
     transition: 500ms;
 }
 
-.header__button:hover{
+.header__button:hover {
     color: hsl(180, 100%, 35%);
+}
+
+.header__button:disabled {
+    color: rgb(158, 158, 158);
 }

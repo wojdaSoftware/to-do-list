@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideFinished = false;
 
     const markTask = (taskIndex) => {
         tasks = tasks.map((task, index) => index === taskIndex ? { ...task, done: !tasks[taskIndex].done } : task);
@@ -39,6 +40,23 @@
         });
     };
 
+    const markAllTasks = () => {
+        tasks = tasks.map((task) => ({ ...task, done: true }))
+
+        render();
+        renderButtons();
+    };
+
+    const bindMarkAllEvent = () => {
+        const markAllButton = document.querySelector(".js-markAllButton");
+
+        if (markAllButton) {
+            markAllButton.addEventListener("click", markAllTasks);
+        };
+    };
+
+    const bindHideEvent = () => { };
+
     const renderTasks = () => {
         let htmlString = "";
 
@@ -60,8 +78,8 @@
 
         if (tasks.length > 0) {
             htmlString = `
-        <button class="header__button">Finish all</button>
-        <button class="header__button">Hide finished</button>
+        <button class="header__button js-markAllButton" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Finish all</button>
+        <button class="header__button js-hideButton">Hide finished</button>
         `
         };
 
@@ -75,6 +93,8 @@
 
         bindMarkEvents();
         bindRemoveEvents();
+        bindMarkAllEvent();
+        bindHideEvent();
     };
 
     const onFormSubmit = (event) => {
@@ -86,6 +106,7 @@
         render();
 
         newTask.value = "";
+        newTask.focus();
     };
 
     const init = () => {
