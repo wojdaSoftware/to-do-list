@@ -1,0 +1,28 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.gridContainer__button {
+    color: teal;
+    background-color: white;
+    border: none;
+    padding: 0;
+    transition: 500ms;
+}
+
+.gridContainer__button:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.gridContainer__button:disabled {
+    color: rgb(158, 158, 158);
+}
