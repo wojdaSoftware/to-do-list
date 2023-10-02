@@ -99,7 +99,7 @@
 
         if (tasks.length > 0) {
             htmlString = `
-        <button class="gridContainer__button js-hideButton">Hide finished</button>
+        <button class="gridContainer__button js-hideButton">${hideFinished ? "Show" : "Hide"} finished</button>
         <button class="gridContainer__button js-markAllButton" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Finish all</button>
         `
         };
